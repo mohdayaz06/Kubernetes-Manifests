@@ -1,1 +1,20 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudkart-app
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cloudkart-app
+  template:
+    metadata:
+      labels:
+        app: cloudkart-app
+    spec:
+      containers:
+      - name: cloudkart-app
+        image: mohdayazz/cloudkart:build-1
+        ports:
+        - containerPort: 3000
