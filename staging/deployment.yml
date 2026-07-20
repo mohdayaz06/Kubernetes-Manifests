@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cloudkart-app
-  namespace: default
+  namespace: staging
 spec:
   replicas: 2
   selector:
